@@ -1,0 +1,170 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:models="clr-namespace:YourProject.Models"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="YourProject.ReportingSimple"
+        Title="Accueil" Height="900" Width="1300">
+
+    <Grid Background="#FFD3DDE9">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label x:Name="titre" Content="SIMPLE REPORTING " FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Times New Roman" Margin="393,54,369,100" Width="430" Height="66" FontWeight="Bold" Background="Transparent" Foreground="#FF0A1F38" Grid.RowSpan="2"/>
+        <Grid x:Name="GridMain" Margin="0,88,0,22" Grid.RowSpan="2">
+            <Grid.DataContext>
+                <models:MainModel/>
+            </Grid.DataContext>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="26*"/>
+                <ColumnDefinition Width="119*"/>
+                <ColumnDefinition Width="89*"/>
+                <ColumnDefinition Width="198*"/>
+                <ColumnDefinition Width="127*"/>
+                <ColumnDefinition Width="87*"/>
+                <ColumnDefinition Width="434*"/>
+                <ColumnDefinition Width="216*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="labelticker"  Content="SECURITY" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="32.222,63,135.556,50.333" Height="26" Width="238" FontSize="16" FontFamily="Times New Roman" Grid.ColumnSpan="3" Grid.Column="1"/>
+            <TextBox x:Name="ticker" Text="{Binding Path=Ticker}" Margin="6.111,59,105.667,50.333" Grid.ColumnSpan="3" Grid.Column="2" FontSize="14"/>
+            <Label x:Name="labeldate" Grid.Column="5" Content="DATE" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="49.333,58,384.556,32.333" FontSize="24" Width="87" Height="49" FontFamily="Times New Roman" Grid.ColumnSpan="2"/>
+            <Label x:Name="labelfrom" Grid.Column="6" Content="From" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="41.222,45,338.556,64.333" FontSize="16" Width="54" Height="30" FontFamily="Times New Roman"/>
+            <Label x:Name="labelto" Grid.Column="6" Content="To" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="58.222,80,321.556,29.333" FontSize="16" Width="54" Height="30" FontFamily="Times New Roman"/>
+
+
+            <DatePicker x:Name="dateFrom" Text="{Binding Path=DateFrom}" Margin="87.222,46,155.556,63.333" Grid.Column="6" FontSize="14"/>
+            <DatePicker x:Name="dateTo" Text="{Binding Path=DateTo}" Margin="87.222,80,155.556,29.333" Grid.Column="6" FontSize="14"/>
+
+        </Grid>
+
+
+        <Grid x:Name="GridResult" Grid.Row="2" Margin="0,11,9,10" Grid.RowSpan="2">
+            <Grid.DataContext>
+                <models:ResultModel/>
+            </Grid.DataContext>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="642*"/>
+                <ColumnDefinition Width="59*"/>
+                <ColumnDefinition Width="582*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <GroupBox Header="VOLATILITY" FontFamily="Times New Roman" FontSize="20" Margin="4,19,0,-14" Grid.Row="2">
+                <Grid Margin="2,30,-2,-30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="139*"/>
+                        <ColumnDefinition Width="180*"/>
+                        <ColumnDefinition Width="145*"/>
+                        <ColumnDefinition Width="162*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="27*"/>
+                        <RowDefinition Height="27*"/>
+                    </Grid.RowDefinitions>
+                    <!-- BLOCK DESCRIPTION -->
+                    <Label x:Name="labelvolatility30D" Content="Volatility 30D" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="140" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <Label x:Name="labelvolatility90D" Content="Volatility 90D" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Grid.Row="1" Width="173" Height="33" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <Label x:Name="labelvolatility180D" Content="Volatility 180D" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="140" Grid.Row="0" Grid.Column="2"/>
+                    <Label x:Name="labelvolatility1Y" Content="Volatility 1Y" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Grid.Row="1" Width="173" Height="33" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="v_volatility30D" Text="{Binding Path=Volatility30D}" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="170" Height="23" Grid.Row="0"/>
+                    <TextBlock x:Name="v_volatility90D" Text="{Binding Path=Volatility90D}" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="175" Height="23" Grid.Row="1"/>
+                    <TextBlock x:Name="v_volatility180D" Text="{Binding Path=Volatility180D}" Grid.Column="3" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="162" Height="23" Grid.Row="0"/>
+                    <TextBlock x:Name="v_volatility1Y" Text="{Binding Path=Volatility1Y}" Grid.Column="3" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="162" Height="23" Grid.Row="1"/>
+                </Grid>
+            </GroupBox>
+
+
+            <GroupBox Header="DESCRIPTION" FontFamily="Times New Roman" Margin="16,-19,50.819,140" FontSize="20" Grid.RowSpan="3" Grid.ColumnSpan="2">
+                <Grid Margin="-1,-1,3,1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="185*"/>
+                        <ColumnDefinition Width="442*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="124*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="v_name" Text="{Binding Path=Name}" FontSize="25"  Margin="0,-74,1,57" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock x:Name="v_description" Text="{Binding Path=Description}" Grid.Row="5" TextWrapping="Wrap" Margin="7,15,1,0" Grid.ColumnSpan="2" Grid.RowSpan="3" Height="142" VerticalAlignment="Top"/>
+                    <!-- BLOCK DESCRIPTION -->
+                    <Label x:Name="labelsector" Content="Sector" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="61" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"/>
+                    <Label x:Name="labelprimaryexchange" Content="Primary Exchange" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Grid.Row="1" Width="173" Height="33" Grid.Column="0" Grid.RowSpan="2"/>
+                    <Label x:Name="labelemployees" Content="Employees" HorizontalAlignment="Left" VerticalAlignment="Top" Width="173" Height="33" Grid.Column="0" Grid.Row="2" Grid.RowSpan="2"/>
+                    <Label x:Name="labelcompagnyvalue" Content="Company Value" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="173" Grid.Row="3" Height="33" Grid.Column="0" Grid.RowSpan="2" />
+                    <Label x:Name="labelsprating" Content="S&amp;P Rating" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="173" Grid.Row="4" Height="33" Grid.Column="0" Grid.RowSpan="2"/>
+                    <TextBlock x:Name="v_sector" Text="{Binding Path=Sector}" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="246" Height="23" Grid.Row="0"/>
+                    <TextBlock x:Name="v_primaryexchange" Text="{Binding Path=PrimaryExchange}" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black"  Width="246" Height="23" Grid.Row="1" />
+                    <TextBlock x:Name="v_employee" Text="{Binding Path=Employee}" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="246" Height="23" Grid.Row="2" />
+                    <TextBlock x:Name="v_companyevalue" Text="{Binding Path=CompanyValue}" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="246" Grid.Row="3" Height="23"/>
+                    <TextBlock x:Name="v_sprating" Text="{Binding Path=Rating}" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="246" Grid.Row="4" Height="23"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="DATA" FontFamily="Times New Roman" Margin="10,-19,3,35" FontSize="20" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2">
+                <Grid Margin="10,10,11.6,-209.6" RenderTransformOrigin="0.494,0.353">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="146*"/>
+                        <ColumnDefinition Width="483*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="34*"/>
+                        <RowDefinition Height="38*"/>
+                        <RowDefinition Height="42*"/>
+                        <RowDefinition Height="39*"/>
+                        <RowDefinition Height="28*"/>
+                        <RowDefinition Height="290*"/>
+                    </Grid.RowDefinitions>
+                    <!-- BLOCK DESCRIPTION -->
+                    <Label x:Name="labellastprice" Content="Last Price" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="96" Grid.Row="0" Grid.Column="0"/>
+                    <Label x:Name="labelopen" Content="Open" HorizontalAlignment="Left" Margin="0,2.6,0,0" VerticalAlignment="Top" Grid.Row="1" Width="173" Height="33" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <Label x:Name="labelpreviousclose" Content="Previous Close" HorizontalAlignment="Left" VerticalAlignment="Top" Width="173" Height="33" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,3,0,0"/>
+                    <Label x:Name="label52wkhigh" Content="52wk High" HorizontalAlignment="Left" VerticalAlignment="Top" Width="173" Grid.Row="3" Height="33" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,2.4,0,0" />
+                    <Label x:Name="label52wklow" Content="52wk Low" HorizontalAlignment="Left" VerticalAlignment="Top" Width="173" Grid.Row="4" Height="33" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,2.2,0,0" Grid.RowSpan="2"/>
+                    <TextBlock x:Name="v_lastprice" Text="{Binding Path=LastPrice}" HorizontalAlignment="Left" Margin="138,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="246" Height="23" Grid.Row="0" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="v_open" Text="{Binding Path=Open}" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="246" Height="23" Grid.Row="1" Grid.ColumnSpan="2" Margin="138,2.6,0,0"/>
+                    <TextBlock x:Name="v_previousclose" Text="{Binding Path=PreviousClose}" HorizontalAlignment="Left" Margin="138,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="246" Height="23" Grid.Row="2" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="v_52wkhigh" Text="{Binding Path=WKhigh}" HorizontalAlignment="Left" Margin="138,2.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="246" Grid.Row="3" Height="23" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="v_52wklow" Text="{Binding Path=WKlow}" HorizontalAlignment="Left" Margin="138,2.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="246" Grid.Row="4" Height="23" Grid.ColumnSpan="2"/>
+                    <GroupBox Header="Performance Line Chart"  Grid.Row="5" Grid.ColumnSpan="2" Margin="8,5.2,0,0.4" >
+                        <oxy:Plot Margin="0,0,0,10" x:Name="plot" IsLegendVisible="False" PlotAreaBorderColor="Black" TextColor="Black" BorderBrush="Transparent" Background="White">
+                            <oxy:Plot.Axes>
+                                <oxy:LinearAxis TicklineColor="Black" StringFormat="P" Position="Left" x:Name="perfpcAxis" Key="absval"/>
+                                <oxy:DateTimeAxis TicklineColor="Black" StringFormat="dd/MM/yyyy" Position="Bottom" Key="date"/>
+                            </oxy:Plot.Axes>
+                            <oxy:Plot.Annotations>
+                                <oxy:LineAnnotation X="0" Type="Horizontal" Color="White"/>
+                            </oxy:Plot.Annotations>
+                            <oxy:LineSeries XAxisKey="date" Color="CadetBlue" CanTrackerInterpolatePoints="False" YAxisKey="absval" x:Name="pcprod"/>
+                        </oxy:Plot>
+                    </GroupBox>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <Button x:Name="GetDataButton" Grid.Row="1" Content="GET DATA" VerticalAlignment="Center" Click="GetDataButton_Click" HorizontalAlignment="Center" Background="Black" Height="64" Margin="1133,10,10,50" Width="149" FontFamily="Times New Roman" FontSize="20" Foreground="White" FontWeight="Bold"/>
+        <Label Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Bottom" Content="" />
+
+
+
+        <Image x:Name="haut_jpg" Margin="0,1,0,62" Source="./images/haut.jpg" Stretch="Fill"/>
+        <Image x:Name="bas_jpg" Margin="-2,17,3,1" Grid.Row="4" Source="./images/bas.jpg" Stretch="Fill"/>
+        <Image x:Name="logo" Margin="-2,17,903.556,0.889" Grid.Row="4" Source="./images/Logo.png" Stretch="Fill"/>
+        <Button x:Name="PrintButton" Grid.Row="1" Content="PRINT" VerticalAlignment="Center" Click="PrintButton_Click" HorizontalAlignment="Center" Background="Black" Height="64" Margin="979,10,164,50" Width="149" FontFamily="Times New Roman" FontSize="20" Foreground="White" FontWeight="Bold"/>
+        <Button x:Name="MenuButton" Content="MENU" VerticalAlignment="Center" Click="MenuButton_Click" HorizontalAlignment="Center" Background="Black" Height="50" Margin="1133,45.286,42,29.714" Width="117" FontFamily="Times New Roman" FontSize="20" Foreground="White" FontWeight="Bold" Grid.Row="4"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,211 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:models="clr-namespace:YourProject.Models"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="YourProject.ReportingComplexe"
+        Title="Complex Reporting" Height="900" Width="1300">
+
+    <Grid Background="#FFD3DDE9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="124*"/>
+            <RowDefinition Height="96*"/>
+            <RowDefinition Height="400*"/>
+            <RowDefinition Height="124*"/>
+            <RowDefinition Height="125*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="titre" Content="COMPLEX REPORTING " FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Times New Roman" Margin="443,58,337,0" Width="512" Height="66" FontWeight="Bold" Background="Transparent" Foreground="#FF0A1F38"/>
+        <Grid x:Name="GridMain" Margin="0,88,0,22" Grid.RowSpan="2">
+            <Grid.DataContext>
+                <models:ResultModel/>
+            </Grid.DataContext>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="24*"/>
+                <ColumnDefinition Width="109*"/>
+                <ColumnDefinition Width="82*"/>
+                <ColumnDefinition Width="182*"/>
+                <ColumnDefinition Width="117*"/>
+                <ColumnDefinition Width="81*"/>
+                <ColumnDefinition Width="398*"/>
+                <ColumnDefinition Width="199*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="labeldate" Content="DATE" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8.778,22,10.889,50.889" FontSize="24" Width="99" Height="38" FontFamily="Times New Roman" Grid.Column="1"/>
+            <Label x:Name="labelfrom" Grid.Column="1" Content="FROM" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,7,22.222,73.889" FontSize="16" Width="72" Height="30" FontFamily="Times New Roman" Grid.ColumnSpan="2"/>
+            <Label x:Name="labelto" Grid.Column="2" Content="TO" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="19.111,51,196,29.889" FontSize="16" Width="72" Height="30" FontFamily="Times New Roman" Grid.ColumnSpan="2"/>
+
+            <DatePicker x:Name="dateFrom" Text="{Binding Path=DateFrom}"  Height="30" Margin="56,7,42,75" Grid.Column="2" FontSize="14" Grid.ColumnSpan="2" SelectedDate="01/01/2000"/>
+            <DatePicker x:Name="dateTo" Text="{Binding Path=DateTo}" Height="30" Margin="58,52,40,30" Grid.Column="2" FontSize="14" Grid.ColumnSpan="2" SelectedDate="02/01/2000"/>
+
+        </Grid>
+
+        <Grid x:Name="GridResult" Grid.Row="1" Margin="5,59,4,3" RenderTransformOrigin="0.499,0.573" Grid.RowSpan="2">
+            <Grid.DataContext>
+                <models:ResultModel/>
+            </Grid.DataContext>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="398*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="470*"/>
+                <ColumnDefinition Width="413*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="220"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <GroupBox Header="SECURITY n°1" FontFamily="Times New Roman" Margin="0,-10,0,95" FontSize="20" Grid.Column="0" Grid.Row="0">
+                <Grid Margin="0,0,-7,0" Height="95" VerticalAlignment="Top">
+                    <Grid.DataContext>
+                        <models:MainModel/>
+                    </Grid.DataContext>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="159*"/>
+                        <ColumnDefinition Width="199*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="40*"/>
+                    </Grid.RowDefinitions>
+                    <!-- BLOCK DESCRIPTION -->
+                    <Label x:Name="labelname1" Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="116" Grid.Row="0" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
+                    </Label>
+                    <Label x:Name="labelnbpart1" Content="Number of shares" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Grid.Row="1" Width="158" Height="33" Grid.Column="0"/>
+                    <TextBox x:Name="v_ticker1" Text="{Binding Path=Ticker1}" Grid.Column="1" HorizontalAlignment="Left" Margin="4,10,0,10" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="Black" Background="White" Width="185" Height="28" Grid.Row="0" />
+                    <TextBox x:Name="v_nbShares1" Text="{Binding Path=NbShare1}" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="Black" Background="White" Width="185" Height="30" Grid.Row="1" Margin="4,10,0,7"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="SECURITY n°2" FontFamily="Times New Roman" Margin="35,-12,55,90" FontSize="20" Grid.Column="2" Grid.Row="0">
+                <Grid Margin="-5,0,-2,0" Height="72" VerticalAlignment="Top">
+                    <Grid.DataContext>
+                        <models:MainModel/>
+                    </Grid.DataContext>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="144*"/>
+                        <ColumnDefinition Width="211*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="53*"/>
+                        <RowDefinition Height="19*"/>
+                    </Grid.RowDefinitions>
+                    <!-- BLOCK DESCRIPTION -->
+                    <Label x:Name="labelname2" Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="116" Grid.Row="0" Grid.Column="0" RenderTransformOrigin="0.5,0.5"/>
+                    <Label x:Name="labelnbpart2" Content="Number of shares" HorizontalAlignment="Left" Margin="0,0,0,-14" VerticalAlignment="Top" Grid.Row="1" Width="173" Height="33" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="v_ticker2" Text="{Binding Path=Ticker2}" Grid.Column="1" HorizontalAlignment="Left" Margin="4,0,0,13" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="Black" Background="White" Width="202" Height="30" Grid.Row="0"/>
+                    <TextBox x:Name="v_nbShares2" Text="{Binding Path=NbShare2}" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="Black" Background="White" Width="202" Height="32" Grid.Row="1" Margin="4,0,0,-13"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="SECURITY n°3" FontFamily="Times New Roman" Margin="5,-14,13,90" FontSize="20" Grid.Row="0" Grid.Column="3">
+                <Grid Margin="0,0,-7,0" Height="94" VerticalAlignment="Top">
+                    <Grid.DataContext>
+                        <models:MainModel/>
+                    </Grid.DataContext>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="77*"/>
+                        <ColumnDefinition Width="118*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="40*"/>
+                    </Grid.RowDefinitions>
+                    <!-- BLOCK DESCRIPTION -->
+                    <Label x:Name="labelname3" Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="116" Grid.Row="0" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
+                    </Label>
+                    <Label x:Name="labelnbpart3" Content="Number of shares" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Grid.Row="1" Width="173" Height="33" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                    <TextBox x:Name="v_ticker3" Text="{Binding Path=Ticker3}" Grid.Column="1" HorizontalAlignment="Left" Margin="4,10,0,9" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="Black" Background="White" Width="202" Height="28" Grid.Row="0"/>
+                    <TextBox x:Name="v_nbShares3" Text="{Binding Path=NbShare3}" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="Black" Background="White" Width="202" Height="29" Grid.Row="1" Margin="4,10,0,8"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="Volatility" Margin="21,165,30,10" Grid.Column="2" Grid.RowSpan="2">
+                <GroupBox.DataContext>
+                    <models:ResultModel/>
+                </GroupBox.DataContext>
+                <oxy:Plot Margin="0,10,-2,-1" x:Name="v_plot2" IsLegendVisible="False" PlotAreaBorderColor="Black" TextColor="Black" BorderBrush="Transparent" Background="White">
+                    <oxy:Plot.Axes>
+                        <oxy:LinearAxis TicklineColor="Black" StringFormat="P" Position="Left" x:Name="perfpcAxis1" Key="absval"/>
+                        <oxy:DateTimeAxis TicklineColor="Black" StringFormat="dd/MM/yyyy" Position="Bottom" Key="date"/>
+                    </oxy:Plot.Axes>
+                    <oxy:Plot.Annotations>
+                        <oxy:LineAnnotation X="0" Type="Horizontal" Color="White"/>
+                    </oxy:Plot.Annotations>
+                    <oxy:LineSeries XAxisKey="date" Color="CadetBlue" CanTrackerInterpolatePoints="False" YAxisKey="absval" x:Name="graph_volat"/>
+                </oxy:Plot>
+            </GroupBox>
+
+            <GroupBox Header="Performance of the Securities" Margin="455,165,8,10" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                <GroupBox.DataContext>
+                    <models:ResultModel/>
+                </GroupBox.DataContext>
+                <oxy:Plot Margin="1,11,-3,-2" x:Name="v_plot3" IsLegendVisible="False" PlotAreaBorderColor="Black" TextColor="Black" BorderBrush="Transparent" Background="White">
+                    <oxy:Plot.Axes>
+                        <oxy:LinearAxis TicklineColor="Black" StringFormat="P" Position="Left" x:Name="perfpcAxis2" Key="absval"/>
+                        <oxy:DateTimeAxis TicklineColor="Black" StringFormat="dd/MM/yyyy" Position="Bottom" Key="date"/>
+                    </oxy:Plot.Axes>
+                    <oxy:Plot.Annotations>
+                        <oxy:LineAnnotation X="0" Type="Horizontal" Color="White"/>
+                    </oxy:Plot.Annotations>
+                    <oxy:LineSeries XAxisKey="date" Color="Brown" CanTrackerInterpolatePoints="False" YAxisKey="absval" x:Name="graph_1"/>
+                    <oxy:LineSeries XAxisKey="date" Color="Red" CanTrackerInterpolatePoints="False" YAxisKey="absval" x:Name="graph_2"/>
+                    <oxy:LineSeries XAxisKey="date" Color="Orange" CanTrackerInterpolatePoints="False" YAxisKey="absval" x:Name="graph_3"/>
+                </oxy:Plot>
+            </GroupBox>
+            <Label x:Name="label" Content="" HorizontalAlignment="Left" Height="18" Margin="375,107,0,0" VerticalAlignment="Top" Width="23" Background="Brown" RenderTransformOrigin="-0.304,0.333"/>
+            <Label x:Name="label_Copy" Content="" HorizontalAlignment="Left" Height="18" Margin="392,112,0,0" VerticalAlignment="Top" Width="23" Background="Red" RenderTransformOrigin="-0.304,0.333" Grid.Column="2"/>
+            <Label x:Name="label_Copy1" Content="" HorizontalAlignment="Left" Height="18" Margin="377,112,0,0" VerticalAlignment="Top" Width="23" Background="Orange" RenderTransformOrigin="-0.304,0.333" Grid.Column="3"/>
+        </Grid>
+
+
+
+        <GroupBox Header="Performance of the portfolio"  Grid.Row="2" Margin="5,128,880,11" Grid.Column="0">
+            <GroupBox.DataContext>
+                <models:ResultModel/>
+            </GroupBox.DataContext>
+            <oxy:Plot Margin="-5,7,3,2" x:Name="v_plot1" IsLegendVisible="False" PlotAreaBorderColor="Black" TextColor="Black" BorderBrush="Transparent" Background="White">
+                <oxy:Plot.Axes>
+                    <oxy:LinearAxis TicklineColor="Black" StringFormat="P" Position="Left" x:Name="perfpcAxis" Key="absval"/>
+                    <oxy:DateTimeAxis TicklineColor="Black" StringFormat="dd/MM/yyyy" Position="Bottom" Key="date"/>
+                </oxy:Plot.Axes>
+                <oxy:Plot.Annotations>
+                    <oxy:LineAnnotation X="0" Type="Horizontal" Color="White"/>
+                </oxy:Plot.Annotations>
+                <oxy:LineSeries XAxisKey="date" Color="Green" CanTrackerInterpolatePoints="False" YAxisKey="absval" x:Name="graph_perf"/>
+            </oxy:Plot>
+        </GroupBox>
+
+        <GroupBox Header="DATA" FontFamily="Times New Roman" FontSize="20" Margin="2,395,2,5" Grid.Row="2" Grid.RowSpan="2">
+            <Grid Margin="13,9,-13,-9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="310*"/>
+                    <ColumnDefinition Width="365*"/>
+                    <ColumnDefinition Width="291*"/>
+                    <ColumnDefinition Width="310*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="27*"/>
+                    <RowDefinition Height="27*"/>
+                </Grid.RowDefinitions>
+                <!-- BLOCK DESCRIPTION -->
+                <Label x:Name="labelpriceportofolioend" Content="Initial price of the Portofolio: " HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="300" Grid.Row="0" Grid.Column="0" Margin="0,1,0,0"/>
+                <Label x:Name="labelpl" Content="P&amp;L:" FontSize ="25" HorizontalAlignment="Left" Margin="340,25,0,0" VerticalAlignment="Top" Width="68" Height="33" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                <Label x:Name="labelpriceportofoliobegin" Content="Current value of the Portofolio:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="33" Width="262" Grid.Row="1" Margin="1,0,0,15"/>
+                <TextBlock x:Name="v_priceportofolio_begin" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,0,15" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="Black" Width="257" Height="23" Grid.Row="0"/>
+                <TextBlock x:Name="v_priceportofolio_end" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,15" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="Black" Width="257" Height="33" Grid.Row="1"/>
+                <TextBlock x:Name="v_pl" Grid.Column="2" FontSize ="25" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="WhiteSmoke"  Width="270" Height="27" Grid.ColumnSpan="2" Margin="48,31,0,38" Grid.RowSpan="2"/>
+            </Grid>
+        </GroupBox>
+
+        <Button x:Name="PrintButton" Content="PRINT" VerticalAlignment="Center" Click="PrintButton_Click" HorizontalAlignment="Center" Background="Black" Height="64" Margin="977,86,166,72" Width="149" FontFamily="Times New Roman" FontSize="20" Foreground="White" FontWeight="Bold" Grid.RowSpan="2"/>
+        <Button x:Name="GetDataButton" Content="GET DATA" VerticalAlignment="Center" Click="GetDataButton_Click" HorizontalAlignment="Center" Background="Black" Height="64" Margin="1131,86,12,72" Width="149" FontFamily="Times New Roman" FontSize="20" Foreground="White" FontWeight="Bold" Grid.RowSpan="2"/>
+        <Label Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Bottom" Content="" Height="26" Margin="641,0" Width="10" />
+
+        <Image x:Name="haut_jpg" Margin="-2,0,-3.444,62.444" Source="./images/haut.jpg" Stretch="Fill"/>
+        <Image x:Name="bas_jpg" Margin="-5,25.889,-0.444,-1.111" Grid.Row="4" Source="./images/bas.jpg" Stretch="Fill"/>
+        <Image x:Name="logo" Margin="-2,25.889,903.556,0.889" Grid.Row="4" Source="./images/Logo.png" Stretch="Fill"/>
+        <Button x:Name="MenuButton" Content="MENU" VerticalAlignment="Center" Click="MenuButton_Click" HorizontalAlignment="Center" Background="Black" Height="50" Margin="1145,47.889,33.556,27.889" Width="117" FontFamily="Times New Roman" FontSize="20" Foreground="White" FontWeight="Bold" Grid.Row="4"/>
+
+
+    </Grid>
+</Window>

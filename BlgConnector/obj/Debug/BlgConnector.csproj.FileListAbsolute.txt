@@ -1,0 +1,44 @@
+c:\users\bloomberg\documents\visual studio 2013\Projects\YourProject\BlgConnector\obj\Debug\BlgConnector.csprojResolveAssemblyReference.cache
+c:\users\bloomberg\documents\visual studio 2013\Projects\YourProject\BlgConnector\bin\Debug\BlgConnector.dll
+c:\users\bloomberg\documents\visual studio 2013\Projects\YourProject\BlgConnector\bin\Debug\BlgConnector.pdb
+c:\users\bloomberg\documents\visual studio 2013\Projects\YourProject\BlgConnector\bin\Debug\Bloomberglp.Blpapi.dll
+c:\users\bloomberg\documents\visual studio 2013\Projects\YourProject\BlgConnector\obj\Debug\BlgConnector.dll
+c:\users\bloomberg\documents\visual studio 2013\Projects\YourProject\BlgConnector\obj\Debug\BlgConnector.pdb
+C:\Users\ACER\Documents\Programming Bloomberg API with C#\Projet2\YourProject\BlgConnector\bin\Debug\BlgConnector.dll
+C:\Users\ACER\Documents\Programming Bloomberg API with C#\Projet2\YourProject\BlgConnector\bin\Debug\BlgConnector.pdb
+C:\Users\ACER\Documents\Programming Bloomberg API with C#\Projet2\YourProject\BlgConnector\bin\Debug\BEmu_csh.dll
+C:\Users\ACER\Documents\Programming Bloomberg API with C#\Projet2\YourProject\BlgConnector\obj\Debug\BlgConnector.csprojResolveAssemblyReference.cache
+C:\Users\ACER\Documents\Programming Bloomberg API with C#\Projet2\YourProject\BlgConnector\obj\Debug\BlgConnector.dll
+C:\Users\ACER\Documents\Programming Bloomberg API with C#\Projet2\YourProject\BlgConnector\obj\Debug\BlgConnector.pdb
+G:\Version essai\YourProject\BlgConnector\bin\Debug\BlgConnector.dll
+G:\Version essai\YourProject\BlgConnector\bin\Debug\BlgConnector.pdb
+G:\Version essai\YourProject\BlgConnector\bin\Debug\Bloomberglp.Blpapi.dll
+G:\Version essai\YourProject\BlgConnector\bin\Debug\NeutralObjects.dll
+G:\Version essai\YourProject\BlgConnector\bin\Debug\NeutralObjects.pdb
+G:\Version essai\YourProject\BlgConnector\obj\Debug\BlgConnector.csprojResolveAssemblyReference.cache
+G:\Version essai\YourProject\BlgConnector\obj\Debug\BlgConnector.dll
+G:\Version essai\YourProject\BlgConnector\obj\Debug\BlgConnector.pdb
+D:\Projet 2.2\Reporting_V2\YourProject\BlgConnector\bin\Debug\BlgConnector.dll
+D:\Projet 2.2\Reporting_V2\YourProject\BlgConnector\bin\Debug\BlgConnector.pdb
+D:\Projet 2.2\Reporting_V2\YourProject\BlgConnector\bin\Debug\Bloomberglp.Blpapi.dll
+D:\Projet 2.2\Reporting_V2\YourProject\BlgConnector\bin\Debug\NeutralObjects.dll
+D:\Projet 2.2\Reporting_V2\YourProject\BlgConnector\bin\Debug\NeutralObjects.pdb
+D:\Projet 2.2\Reporting_V2\YourProject\BlgConnector\obj\Debug\BlgConnector.csprojResolveAssemblyReference.cache
+D:\Projet 2.2\Reporting_V2\YourProject\BlgConnector\obj\Debug\BlgConnector.dll
+D:\Projet 2.2\Reporting_V2\YourProject\BlgConnector\obj\Debug\BlgConnector.pdb
+D:\Projet 2.2\Reporting_V3\YourProject\BlgConnector\bin\Debug\BlgConnector.dll
+D:\Projet 2.2\Reporting_V3\YourProject\BlgConnector\bin\Debug\BlgConnector.pdb
+D:\Projet 2.2\Reporting_V3\YourProject\BlgConnector\bin\Debug\Bloomberglp.Blpapi.dll
+D:\Projet 2.2\Reporting_V3\YourProject\BlgConnector\bin\Debug\NeutralObjects.dll
+D:\Projet 2.2\Reporting_V3\YourProject\BlgConnector\bin\Debug\NeutralObjects.pdb
+D:\Projet 2.2\Reporting_V3\YourProject\BlgConnector\obj\Debug\BlgConnector.csprojResolveAssemblyReference.cache
+D:\Projet 2.2\Reporting_V3\YourProject\BlgConnector\obj\Debug\BlgConnector.dll
+D:\Projet 2.2\Reporting_V3\YourProject\BlgConnector\obj\Debug\BlgConnector.pdb
+D:\Projet 2.2\Reporting_V4\YourProject\BlgConnector\bin\Debug\BlgConnector.dll
+D:\Projet 2.2\Reporting_V4\YourProject\BlgConnector\bin\Debug\BlgConnector.pdb
+D:\Projet 2.2\Reporting_V4\YourProject\BlgConnector\bin\Debug\Bloomberglp.Blpapi.dll
+D:\Projet 2.2\Reporting_V4\YourProject\BlgConnector\bin\Debug\NeutralObjects.dll
+D:\Projet 2.2\Reporting_V4\YourProject\BlgConnector\bin\Debug\NeutralObjects.pdb
+D:\Projet 2.2\Reporting_V4\YourProject\BlgConnector\obj\Debug\BlgConnector.csprojResolveAssemblyReference.cache
+D:\Projet 2.2\Reporting_V4\YourProject\BlgConnector\obj\Debug\BlgConnector.dll
+D:\Projet 2.2\Reporting_V4\YourProject\BlgConnector\obj\Debug\BlgConnector.pdb
